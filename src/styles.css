@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+.card-footer{
+    display: flex;
+    justify-content: end;
+}
+.botonera{
+    display: flex;
+    justify-content: space-between;
+}
+.botonera > button{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.botonera > button:nth-child(1){
+    margin-right: 10px;
+}
+.btn-action{
+    text-align: center;
+}

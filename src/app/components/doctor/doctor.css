@@ -1,0 +1,15 @@
+.card-footer{
+    display: flex;
+    justify-content: end;
+}
+.botonera{
+    display: flex;
+    justify-content: space-between;
+}
+.botonera > button{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.botonera > button:nth-child(1){
+    margin-right: 10px;
+}

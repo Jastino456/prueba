@@ -1,0 +1,167 @@
+<div class="container">
+<div class="card">
+    <div class="card-header">
+        <h3>Cátalogo de Clientes</h3>
+    </div>
+            <div class="card-body">
+                <table class="table table-striped">
+        <thead>
+            
+            <tr>
+           <th scope="col">idCliente</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Télefono</th>
+            <th scope="col">Correo</th>
+            <th colspan="3" class="btn-action">
+                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formularioClientes">
+                    <fa-icon [icon]="faPlus"></fa-icon> 
+                </button>
+            </tr>
+        </thead>
+         <tbody>
+             @for(item of clientes; track item.id){
+             <tr>
+            <td>{{item.id}}</td>
+            <td>{{item.nombre}}</td>
+            <td>{{item.direccion}}</td>
+            <td>{{item.telefono}}</td>
+            <td>{{item.correo}}</td>
+
+           <td class="btn-action">
+            <button class="btn btn-info" (click)="onInfo(item.id)" data-bs-toggle="modal" data-bs-target="#ventanaInfo">
+              <fa-icon [icon]="faInfo"></fa-icon>
+            </button>
+          </td>
+            <td class="btn-action"><button class="btn btn-warning" (click)="onEditar(item.id)"><fa-icon [icon]="faPencil"> </fa-icon></button></td>
+            <td class="btn-action"><button class="btn btn-danger" (click)="onEliminar(item.id)"><fa-icon [icon]="faTrash"></fa-icon></button></td>
+            </tr>
+            }
+           </tbody>
+          </table>
+            </div>
+    <div class="card-footer d-flex justify-content-between">
+      <div class="d-flex">
+        
+        <select class="form-select me-2"(change)="onElementosPaginas($event)"> 
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="5" selected>5</option>
+        </select>
+        
+        <nav aria-label="Page navigation example">
+          <ul class="pagination pagination-lg">
+            <li class="page-item">
+              <a class="page-link"  aria-label="Previous" (click)="onPaginarAnt();">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            @for (item of pages; track $index) {
+              <li class="page-item" (click)="onPaginaClick(item)" id="page{{item}}"
+               [ngClass]="{'active' : page === item}"
+              >
+                
+
+                <a class="page-link">{{item}}</a></li>
+            }
+
+
+            <li class="page-item">
+              <a class="page-link" (click)="onPaginarSig();" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+
+        <div class="botonera">
+            <button class="btn btn-info">Filtrar</button>
+            <button class="btn btn-danger">Cerrar</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<!--Ventana de formulario mascota-->
+<!-- Modal -->
+<div class="modal fade" id="formularioClientes" tabindex="-1" 
+aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form [formGroup]="frmClientes" id="frmClientes" (ngSubmit)="onGuardar();">
+
+            <div class="form-floating mb-1">
+        <input type="text" class="form-control" id="id" placeholder="id" formControlName="id">
+        <label for="floatingInput">id</label>
+        </div>
+
+        <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="Nombre" placeholder="Nombre" formControlName="nombre">
+        <label for="floatingPassword">Nombre</label>
+        </div>
+
+        <div class="form-floating mb-1" >
+        <input type="text" class="form-control" id="direccion" placeholder="Direccion" formControlName="direccion">
+        <label for="floatingPassword">Direccion</label>
+        </div>
+
+        <div class="form-floating">
+        <input type="text" class="form-control" id="Telefono" placeholder="Telefono" formControlName="telefono">
+        <label for="floatingPassword">telefono</label>
+        </div>
+
+        <div class="form-floating mb-1" >
+        <input type="text" class="form-control" id="correo" placeholder="Correo" formControlName="correo">
+        <label for="floatingPassword"> correo</label>
+        </div>
+
+        
+
+    </form>
+         </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Ventana Info-->
+
+<div class="modal fade" id="ventanaInfo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container ">
+          <div class="row row-cols-2">
+            <div class="col">Id</div>
+            <div class="col">{{cliente?.id}}</div>
+            <div class="col">Nombre</div>
+            <div class="col">{{cliente?.nombre}}</div>
+            <div class="col">Direccion</div>
+            <div class="col">{{cliente?.direccion}}</div>
+            <div class="col">Telefono</div>
+            <div class="col">{{cliente?.telefono}}</div>
+            <div class="col">Correo</div>
+            <div class="col">{{cliente?.correo}}</div>
+          </div>
+        </div>
+      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>

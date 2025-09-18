@@ -1,0 +1,205 @@
+<div class="container">
+<div class="card">
+    <div class="card-header">
+        <h3>Cátalogo Mascotas</h3>
+    </div>
+  <div class="card-body">
+        <table class="table table-striped">
+        <thead>
+            <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Especie</th>
+            <th scope="col">Raza</th>
+            <th scope="col">Género</th>
+            <th scope="col">Fecha de nacimiento</th>
+            <th scope="col">Peso</th>
+            <th colspan="3" class="btn-action">
+                <button class="btn btn-primary px-5" (click)="onNuevo();"
+                data-bs-toggle="modal" data-bs-target="#formularioMascota">
+                    <fa-icon [icon]="faPlus"></fa-icon> 
+                </button></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(item of mascotas; track item.id){
+            <tr>
+            <td>{{item.nombre}}</td>
+            <td>{{item.especie}}</td>
+            <td>{{item.raza}}</td>
+            <td>{{item.genero}}</td>
+            <td>{{item.fechaNacimiento}}</td>
+            <td>{{item.peso}}</td>
+            <td class="btn-action">
+              <button class="btn btn-info" (click)="onInfo(item.id)"
+              data-bs-toggle="modal" data-bs-target="#ventanaInfo">
+                <fa-icon [icon]="faInfo"></fa-icon>
+              </button>
+            </td>
+           <td class="btn-action">
+                <button class="btn btn-warning" (click)="onEditar(item.id)" 
+                data-bs-toggle="modal" data-bs-target="#formularioMascota">
+                <fa-icon [icon]="faPencil"></fa-icon>
+                </button>
+              </td>
+            <td class="btn-action"><button class="btn btn-danger" (click)="onEliminar(item.id)"><fa-icon [icon]="faTrash"></fa-icon></button></td>
+            </tr>
+            }
+          
+        </tbody>
+        </table>
+    </div>
+
+    <div class="card-footer d-flex justify-content-between" >
+      <div class="d-flex">
+        
+        <select class="form-select me-2"(change)="onElementosPaginas($event)"> 
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="5" selected>5</option>
+        </select>
+        
+        <nav aria-label="Page navigation example">
+          <ul class="pagination pagination-lg">
+            <li class="page-item">
+              <a class="page-link"  aria-label="Previous" (click)="onPaginarAnt();">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            @for (item of pages; track $index) {
+              <li class="page-item" (click)="onPaginaClick(item)" id="page{{item}}"
+               [ngClass]="{'active' : page === item}"
+              >
+                
+
+                <a class="page-link">{{item}}</a></li>
+            }
+
+
+            <li class="page-item">
+              <a class="page-link" (click)="onPaginarSig();" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+
+
+        <div class="botonera">
+            <button class="btn btn-info"><fa-icon [icon]="faSearch"></fa-icon></button>
+            <button class="btn btn-danger"><fa-icon [icon]="faCircleXmark"></fa-icon></button>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- ,_per_page -->
+<!--Ventana de formulario mascota-->
+<!-- Modal -->
+<div class="modal fade" id="formularioMascota" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+    <form [formGroup]="frmMascotas" id="frmMascotas" (ngSubmit)="onGuardar();">
+
+        <div class="form-floating mb-1">
+        <input type="text" class="form-control" id="id" placeholder="id" formControlName="id">
+        <label for="floatingInput">id</label>
+        </div>
+
+        <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="Nombre" placeholder="Nombre" formControlName="nombre">
+        <label for="floatingInput">Nombre</label>
+        </div>
+
+        <div class="form-floating mb-1" >
+        <input type="text" class="form-control" id="Especie" placeholder="Especie" formControlName="especie">
+        <label for="floatingPassword">Especie</label>
+        </div>
+
+        <div class="form-floating">
+        <input type="text" class="form-control" id="Raza" placeholder="Raza" formControlName="raza">
+        <label for="floatingPassword">Raza</label>
+        </div>
+
+        <div class="form-check mb-1">
+                    <input class="form-check-input" type="radio" name="genero" formControlName="genero" value="M"  id="generoM">
+                    <label class="form-check-label" for="generoM">
+                        Masculino
+                    </label>
+        </div>
+        <div class="form-check">
+                    <input class="form-check-input" type="radio" name="genero"  formControlName="genero" value="F"  id="generoF">
+                    <label class="form-check-label" for="generoF">
+                        Femenino
+                    </label>
+        </div>
+
+        <div class="form-floating mb-1" >
+        <input type="date" class="form-control" id="fechaNacimiento" placeholder="fechaNacimiento" formControlName="fechaNacimiento">
+        <label for="floatingPassword">Fecha Nacimiento</label>
+        </div>
+
+        
+        <div class="form-floating form-group">
+        <div class="input-group">
+        <input type="number" class="form-control" id="peso" placeholder="Peso" fechaNacimiento="peso">
+        <span class="input-group-text">peso</span>
+        </div>
+         </div>
+         <input type="hidden" fromControlName="funcion">
+    </form>
+    
+</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" form="frmMascotas" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Ventana Info-->
+<div class="modal fade" id="ventanaInfo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container ">
+          <div class="row row-cols-2">
+            <div class="col">Id</div>
+            <div class="col">{{mascota?.id}}</div>
+            <div class="col">Nombre</div>
+            <div class="col">{{mascota?.nombre}}</div>
+            <div class="col">Especie</div>
+            <div class="col">{{mascota?.especie}}</div>
+            <div class="col">Raza</div>
+            <div class="col">{{mascota?.raza}}</div>
+            <div class="col">Genero</div>
+            <div class="col">{{mascota?.genero}}</div>
+            <div class="col">FechadeNacimiento</div>
+            <div class="col">{{mascota?.fechaNacimiento}}</div>
+            <div class="col">Peso</div>
+            <div class="col">{{mascota?.peso}}</div>
+            <div class="col">Edad</div>
+            <div class="col">{{mascota?.edad}}</div>
+          </div>
+        </div>
+      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>

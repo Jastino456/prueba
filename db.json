@@ -1,0 +1,280 @@
+{
+  "mascotas": [
+    {
+      "id": "1",
+      "nombre": "Gojo",
+      "especie": "felino",
+      "raza": "unkwon",
+      "genero": "M",
+      "fechaNacimiento": "2024-02-26",
+      "peso": "18"
+    },
+    {
+      "id": "2",
+      "nombre": "maki",
+      "especie": "felino",
+      "raza": "unkwon",
+      "genero": "M",
+      "fechaNacimiento": "01-09-2024",
+      "peso": "18kg"
+    },
+    {
+      "id": "3",
+      "nombre": "Gojo2",
+      "especie": "felino",
+      "raza": "unkwon",
+      "genero": "M",
+      "fechaNacimiento": "26-02-2024",
+      "peso": "18kg"
+    },
+    {
+      "id": "4",
+      "nombre": "Goldy",
+      "especie": "canino",
+      "raza": "cruzado",
+      "genero": "M",
+      "fechaNacimiento": "09-02-2024",
+      "peso": "28kg"
+    },
+    {
+      "id": "5",
+      "nombre": "Orion",
+      "especie": "Felino",
+      "raza": "Unkwon",
+      "genero": "M",
+      "fechaNacimiento": "2025-08-19",
+      "peso": "88kg"
+    },
+    {
+      "id": "6",
+      "nombre": "Toji",
+      "especie": "felino",
+      "raza": "unkwon",
+      "genero": "M",
+      "fechaNacimiento": "26-02-2014",
+      "peso": "18kg"
+    },
+    {
+      " id": "7",
+      "nombre": "nanami",
+      "especie": "canino",
+      "raza": "caniche",
+      "genero": "M",
+      "fechaNacimiento": "09-02-2020",
+      "peso": "20kg",
+      "id": "34b1"
+    },
+    {
+      "id": "8",
+      "nombre": "Coda",
+      "especie": "canino",
+      "raza": "cruzado",
+      "genero": "F",
+      "fechaNacimiento": "09-02-2023",
+      "peso": "28kg"
+    },
+    {
+      "id": "9",
+      "nombre": "Miau Miau",
+      "especie": "Felino",
+      "raza": "Unkwon",
+      "genero": "M",
+      "fechaNacimiento": "2025-08-12",
+      "peso": "20kg"
+    },
+    {
+      "id": "10",
+      "nombre": "Miau Miau",
+      "especie": "Felino",
+      "raza": "Unkwon",
+      "genero": "M",
+      "fechaNacimiento": "2025-08-13",
+      "peso": " 20kg"
+    },
+    {
+      "id": "11",
+      "nombre": "MambaNegra",
+      "especie": "serpiente",
+      "raza": "Unkwon",
+      "genero": "M",
+      "fechaNacimiento": "2025-09-04",
+      "peso": "20kg"
+    }
+  ],
+  "doctores": [
+    {
+      "id": "2",
+      "idDoctor": "703340198",
+      "nombre": "Yuji",
+      "especialidad": "Forense",
+      "telefono": "Benito1263@gmail.com",
+      "correo": "236986872"
+    },
+    {
+      "id": "3",
+      "idDoctor": "703340198",
+      "nombre": "Shoko",
+      "especialidad": "Forense",
+      "telefono": "camela1243@gmail.com",
+      "correo": "575293470"
+    },
+    {
+      "id": "4",
+      "idDoctor": "703340198",
+      "nombre": "Shoko",
+      "especialidad": "Forense",
+      "telefono": "camela1243@gmail.com",
+      "correo": "575293470"
+    },
+    {
+      "id": "5",
+      "idDoctor": "703340198",
+      "nombre": "Shoko",
+      "especialidad": "Forense",
+      "telefono": "camela1243@gmail.com",
+      "correo": "575293470"
+    },
+    {
+      "id": "6",
+      "idDoctor": "703340198",
+      "nombre": "Shoko",
+      "especialidad": "Forense",
+      "telefono": "camela1243@gmail.com",
+      "correo": "575293470"
+    },
+    {
+      "id": "7",
+      "idDoctor": "703340198",
+      "nombre": "Shoko",
+      "especialidad": "Forense",
+      "telefono": "camela1243@gmail.com",
+      "correo": "575293470"
+    },
+    {
+      "id": "8",
+      "idDoctor": "703340198",
+      "nombre": "Shoko",
+      "especialidad": "Forense",
+      "telefono": "camela1243@gmail.com",
+      "correo": "575293470"
+    },
+    {
+      "id": "9",
+      "idDoctor": "703340198",
+      "nombre": "Shoko",
+      "especialidad": "Forense",
+      "telefono": "camela1243@gmail.com",
+      "correo": "575293470"
+    },
+    {
+      "id": "10",
+      "idDoctor": "703340198",
+      "nombre": "Shoko",
+      "especialidad": "Forense",
+      "telefono": "camela1243@gmail.com",
+      "correo": "575293470"
+    },
+    {
+      "id": "11",
+      "idDoctor": "703340198",
+      "nombre": "Shoko",
+      "especialidad": "Forense",
+      "telefono": "camela1243@gmail.com",
+      "correo": "575293470"
+    },
+    {
+      "id": "12",
+      "idDoctor": "703340198",
+      "nombre": "Shoko",
+      "especialidad": "Forense",
+      "telefono": "camela1243@gmail.com",
+      "correo": "575293470"
+    }
+  ],
+  "clientes": [
+    {
+      "id": "1",
+      "nombre": "shaka",
+      "direccion": "Forense",
+      "telefono": "pedrito1273@gmail.com",
+      "correo": "6547830"
+    },
+    {
+      "id": "2",
+      "nombre": "pedro",
+      "direccion": "Forense",
+      "telefono": "Benito1263@gmail.com",
+      "correo": "236986872"
+    },
+    {
+      "id": "3",
+      "nombre": "juan",
+      "direccion": "Forense",
+      "telefono": "camela1243@gmail.com",
+      "correo": "575293470"
+    },
+    {
+      "id": "4",
+      "nombre": "juan",
+      "direccion": "Forense",
+      "telefono": "camela1243@gmail.com",
+      "correo": "575293470"
+    },
+    {
+      "id": "5",
+      "nombre": "juan",
+      "direccion": "Forense",
+      "telefono": "camela1243@gmail.com",
+      "correo": "575293470"
+    },
+    {
+      "id": "6",
+      "nombre": "juan",
+      "direccion": "Forense",
+      "telefono": "camela1243@gmail.com",
+      "correo": "575293470"
+    },
+    {
+      "id": "7",
+      "nombre": "juan",
+      "direccion": "Forense",
+      "telefono": "camela1243@gmail.com",
+      "correo": "575293470"
+    },
+    {
+      "id": "8",
+      "nombre": "juan",
+      "direccion": "Forense",
+      "telefono": "camela1243@gmail.com",
+      "correo": "575293470"
+    },
+    {
+      "id": "9",
+      "nombre": "juan",
+      "direccion": "Forense",
+      "telefono": "camela1243@gmail.com",
+      "correo": "575293470"
+    },
+    {
+      "id": "10",
+      "nombre": "juan",
+      "direccion": "Forense",
+      "telefono": "camela1243@gmail.com",
+      "correo": "575293470"
+    },
+    {
+      "id": "11",
+      "nombre": "juan",
+      "direccion": "Forense",
+      "telefono": "camela1243@gmail.com",
+      "correo": "575293470"
+    },
+    {
+      "id": "12",
+      "nombre": "juan",
+      "direccion": "Forense",
+      "telefono": "camela1243@gmail.com",
+      "correo": "575293470"
+    }
+  ]
+}
